@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioExpress</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="./assets/mic.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="container">
+        <div id="mainContainer">
+            <div id="heading">
+                <h1>AudioExpress:</h1>
+                <h1>Text to Speech Converter</h1>
+            </div>
+            <div id="textarea">
+                <textarea name="" id="output" rows="7"></textarea>
+            </div>
+            <div id="buttonDiv">
+                <button id="speakBTN" onclick="speak()">Speak</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function speak(){
+            let speechSynth = window.speechSynthesis;
+            let voice = new SpeechSynthesisUtterance(`${output.value}`);
+            speechSynth.speak(voice)
+        }
+    </script>
+</body>
+
+</html>
